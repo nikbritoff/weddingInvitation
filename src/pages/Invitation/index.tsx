@@ -5,7 +5,7 @@ import { SECTIONS_CONFIG } from "~/shared/layout/const.layout";
 
 export const Component = () => {
   return (
-    <Flex flexDir="column" w="100%">
+    <Flex flexDir="column" w="100%" gap={20} pb={5}>
       <Flex
         bgImg={WeddingPhoto}
         filter="grayscale(1)"
@@ -21,22 +21,21 @@ export const Component = () => {
         gap={5}
         color="brand.white"
         id="main"
-        // bgColor="#6a6e59"
       >
-        <Heading size="xl" textAlign="center">
+        <Heading size="xl" textAlign="center" color="brand.white">
           Приглашение на свадьбу
         </Heading>
-        <Heading size="xl" textAlign="center">
+        <Heading size="xl" textAlign="center" color="brand.white">
           Никита и Олеся
         </Heading>
-        <Heading size="xl" textAlign="center">
+        <Heading size="xl" textAlign="center" color="brand.white">
           10 августа 2024
         </Heading>
       </Flex>
 
       {SECTIONS_CONFIG.map(({ Section, id }, index) => (
         <>
-          <Section id={id} bg="#939681" key={id} />
+          <Section id={id} key={id} />
         </>
       ))}
     </Flex>

@@ -29,31 +29,41 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
   return (
     <Section flexProps={flexProps}>
       <Heading>Дресс код</Heading>
-      <Text textIndent="20px" textAlign="justify">
-        Дорогие гости! Для нашей свадьбы мы выбрали экостиль, где ценится
-        природа и ее красота. Мы будем рады, если Вы поддержите нас, выбрав
-        одежду одежду в натуральных оттенках: зеленый, коричневый, бежевый.
-      </Text>
-      <Text textIndent="20px" textAlign="justify">
-        Пожалуйста, помните, что Ваш образ поможет создать уютную и гармоничную
-        атмосферу нашего праздника. Спасибо за Ваше понимание и поддержку!
-      </Text>
-      <Grid gap={5} gridTemplateColumns="repeat(3, 1fr)">
-        {IMAGES.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            w="120px"
-            h="120px"
-            objectFit="cover"
-            borderRadius={6}
-          />
-        ))}
-      </Grid>
-      <Flex bg="brand.white" p={5} borderRadius={6} gap={3}>
-        {COLORS.map((color) => (
-          <Box w="40px" h="40px" borderRadius="50%" bg={color}></Box>
-        ))}
+      <Flex direction="column" gap={3}>
+        <Text>
+          Дорогие гости! Для нашей свадьбы мы выбрали экостиль, где ценится
+          природа и ее красота. Мы будем рады, если Вы поддержите нас, выбрав
+          одежду одежду в натуральных оттенках: зеленый, коричневый, бежевый.
+        </Text>
+        <Text>
+          Пожалуйста, помните, что Ваш образ поможет создать уютную и
+          гармоничную атмосферу нашего праздника. Спасибо за Ваше понимание и
+          поддержку!
+        </Text>
+        <Grid gap={2} gridTemplateColumns="repeat(3, 1fr)">
+          {IMAGES.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              w="120px"
+              h="120px"
+              objectFit="cover"
+              borderRadius={6}
+            />
+          ))}
+        </Grid>
+        <Flex
+          bg="brand.white"
+          p={5}
+          pt={2}
+          justifyContent="center"
+          borderRadius={6}
+          gap={3}
+        >
+          {COLORS.map((color) => (
+            <Box w="40px" h="40px" borderRadius="50%" bg={color}></Box>
+          ))}
+        </Flex>
       </Flex>
     </Section>
   );

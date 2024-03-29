@@ -13,12 +13,28 @@ import { MdCheckCircle } from "react-icons/md";
 export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
   return (
     <Section flexProps={flexProps}>
-      <Heading>10 августа 2024</Heading>
-      <List spacing={3} maxW="650px" gap={5} display="grid">
+      <Heading textAlign="center">Расписание дня:</Heading>
+      <List spacing={2} maxW="650px" display="grid">
         <ListItem display="flex">
-          <ListIcon as={MdCheckCircle} color="green.500" />
-          <Grid gap={3}>
-            <Heading size="md">16:00 - сбор гостей</Heading>
+          <Grid gap={1}>
+            <Heading size="md">14:00 - трансфер</Heading>
+            <Text>
+              Траспорт отправиться из 2 точек. Подробности можно узнать у
+              организаторов
+            </Text>
+          </Grid>
+        </ListItem>
+
+        <ListItem display="flex">
+          <Grid>
+            <Heading size="md">15:00 - сбор гостей</Heading>
+            <Text>Время для встреч и знакомства</Text>
+          </Grid>
+        </ListItem>
+
+        <ListItem display="flex">
+          <Grid>
+            <Heading size="md">16:00 - церемония</Heading>
             <Text>
               Краткое описание Краткое описание Краткое описание Краткое
               описание Краткое описание
@@ -27,9 +43,8 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         </ListItem>
 
         <ListItem display="flex">
-          <ListIcon as={MdCheckCircle} color="green.500" />
-          <Grid gap={3}>
-            <Heading size="md">17:00 - церемония</Heading>
+          <Grid>
+            <Heading size="md">18:00 - банкет</Heading>
             <Text>
               Краткое описание Краткое описание Краткое описание Краткое
               описание Краткое описание
@@ -38,9 +53,8 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         </ListItem>
 
         <ListItem display="flex">
-          <ListIcon as={MdCheckCircle} color="green.500" />
-          <Grid gap={3}>
-            <Heading size="md">18:00 - начало свадебного ужина</Heading>
+          <Grid>
+            <Heading size="md">23:00 - трансфер</Heading>
             <Text>
               Краткое описание Краткое описание Краткое описание Краткое
               описание Краткое описание

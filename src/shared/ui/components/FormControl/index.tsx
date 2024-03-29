@@ -13,7 +13,7 @@ export const FormControl = ({
   errorMessage,
   children,
   width = "100%",
-  isPadding = true,
+  isPadding = false,
   ...passThroughProps
 }: BaseFormControlProps & { width?: string; isPadding?: boolean }) => (
   <ChakraFormControl
@@ -22,7 +22,11 @@ export const FormControl = ({
     width={width}
     isInvalid={Boolean(errorMessage)}
   >
-    {label ? <FormLabel fontWeight={700}>{label}</FormLabel> : null}
+    {label ? (
+      <FormLabel fontWeight={700} m={0}>
+        {label}
+      </FormLabel>
+    ) : null}
 
     {children}
 

@@ -11,12 +11,12 @@ export const SECTIONS_CONFIG = [
     Section: About,
     bgColor: "#6a6e59",
   },
-  // {
-  //   label: "Расписание",
-  //   id: "timing",
-  //   Section: Timing,
-  //   bgColor: "#c1ab9c",
-  // },
+  {
+    label: "Расписание",
+    id: "timing",
+    Section: Timing,
+    bgColor: "#c1ab9c",
+  },
   {
     label: "Дресс-код",
     id: "dressCode",

@@ -1,6 +1,9 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
 export const Text: ComponentStyleConfig = {
+  baseStyle: {
+    lineHeight: 1.1,
+  },
   sizes: {
     extraSmall: {
       fontSize: "10px",
@@ -11,4 +14,5 @@ export const Text: ComponentStyleConfig = {
       lineHeight: "16px",
     },
   },
+  defaultProps: {},
 };

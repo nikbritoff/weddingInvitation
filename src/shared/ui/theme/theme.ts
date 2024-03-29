@@ -53,17 +53,57 @@ export const theme = extendTheme({
   components: {
     Button,
     Input,
+    Textarea: {
+      variants: {
+        primary: {
+          borderWidth: "1px",
+          borderStyle: "solid",
+          boxShadow: "none",
+          borderColor: "brand.green100",
+          _hover: {
+            borderColor: "var(--chakra-colors-brand-green100)",
+            boxShadow: "var(--chakra-colors-brand-green100)",
+          },
+          _focus: {
+            borderColor: "var(--chakra-colors-brand-green100)",
+            boxShadow: "var(--chakra-colors-brand-green100)",
+          },
+          _focusVisible: {
+            borderColor: "var(--chakra-colors-brand-green100)",
+            boxShadow: "0px 0px 0px 2x var(--chakra-colors-brand-green100)",
+          },
+          _invalid: {
+            boxShadow: "0px 0px 0px 3px var(--chakra-colors-brand-redShadow)",
+          },
+        },
+        _focusVisible: {
+          borderColor: "var(--chakra-colors-brand-green100)",
+          boxShadow: "0px 0px 0px 3px var(--chakra-colors-brand-green100)",
+        },
+      },
+    },
     Heading,
     Tabs,
     Text,
     Radio: {
-      baseStyle: {},
-      control: {
-        borderColor: "red",
-        background: "red",
-        _checked: {
-          borderColor: "red",
-          background: "red",
+      baseStyle: {
+        control: {
+          borderColor: "var(--chakra-colors-brand-green100)",
+          _checked: {
+            borderColor: "var(--chakra-colors-brand-green100)",
+            bg: "var(--chakra-colors-brand-green100)",
+          },
+        },
+      },
+    },
+    Checkbox: {
+      baseStyle: {
+        control: {
+          borderColor: "var(--chakra-colors-brand-green100)",
+          _checked: {
+            borderColor: "var(--chakra-colors-brand-green100)",
+            bg: "var(--chakra-colors-brand-green100)",
+          },
         },
       },
     },

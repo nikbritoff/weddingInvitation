@@ -18,8 +18,8 @@ export const Place = ({
   return (
     <Section flexProps={flexProps}>
       <Heading>Место проведения</Heading>
-      <Grid gridTemplateRows="auto 300px" w="100%" h="100%" gap={5}>
-        <Flex flexDir="column" gap={3}>
+      <Grid gridTemplateRows="auto 300px" w="100%" h="100%" gap={2}>
+        <Flex flexDir="column" gap={2}>
           <Text fontWeight={700}>Эко-парк "Вереск"</Text>
           <Divider />
           <Text>

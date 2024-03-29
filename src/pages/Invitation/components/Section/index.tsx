@@ -9,22 +9,22 @@ export const Section = ({
 }) => {
   return (
     <Flex
-      // minH="100vh"
       w="100%"
-      p={5}
+      px={5}
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      color="brand.white"
+      // color="brand.white"
       {...flexProps}
     >
       <Flex
-        maxW="650px"
+        // maxW="650px"
+        w="100%"
         h="100%"
         alignItems="center"
         justifyContent="center"
         flexDirection="column"
-        gap={5}
+        gap={6}
       >
         {children}
       </Flex>
