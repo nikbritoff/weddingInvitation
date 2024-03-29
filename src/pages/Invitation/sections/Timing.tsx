@@ -18,7 +18,7 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         <ListItem display="flex">
           <ListIcon as={MdCheckCircle} color="green.500" />
           <Grid gap={3}>
-            <Heading size="md">15:00 - сбор гостей</Heading>
+            <Heading size="md">16:00 - сбор гостей</Heading>
             <Text>
               Краткое описание Краткое описание Краткое описание Краткое
               описание Краткое описание
@@ -29,7 +29,7 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         <ListItem display="flex">
           <ListIcon as={MdCheckCircle} color="green.500" />
           <Grid gap={3}>
-            <Heading size="md">16:00 - церемония</Heading>
+            <Heading size="md">17:00 - церемония</Heading>
             <Text>
               Краткое описание Краткое описание Краткое описание Краткое
               описание Краткое описание
@@ -40,7 +40,7 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         <ListItem display="flex">
           <ListIcon as={MdCheckCircle} color="green.500" />
           <Grid gap={3}>
-            <Heading size="md">18:00 - банкет</Heading>
+            <Heading size="md">18:00 - начало свадебного ужина</Heading>
             <Text>
               Краткое описание Краткое описание Краткое описание Краткое
               описание Краткое описание

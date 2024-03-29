@@ -5,6 +5,10 @@ import { Input } from "./Input";
 import { Tabs } from "./Tabs";
 import { Text } from "./Text";
 
+import "@fontsource/open-sans";
+import "@fontsource/raleway";
+import { Heading } from "./Heading";
+
 export const theme = extendTheme({
   colors: {
     brand: {
@@ -27,8 +31,8 @@ export const theme = extendTheme({
       gray700: "#495057",
       gray800: "#343a40",
       gray900: "#212529",
-      green100: "#d1e7dd",
-      green400: "#75b798",
+      green100: "#6a6e59",
+      green400: "#939681",
       green500: "#28a745",
       red100: "#f8d7da",
       red300: "#ea868f",
@@ -36,16 +40,32 @@ export const theme = extendTheme({
       purple500: "#5227cc",
       redShadow: "#DC354533",
       white: "#ffffff",
+      beige100: "#e8d5ca",
+      beige200: "#c1ab9c",
+      beige500: "#a47d60",
+      beige700: "#713b22",
     },
   },
   fonts: {
-    heading: `'Inter', sans-serif`,
-    body: `'Inter', sans-serif`,
+    heading: `'Raleway', sans-serif`,
+    body: `'Raleway', sans-serif`,
   },
   components: {
     Button,
     Input,
+    Heading,
     Tabs,
     Text,
+    Radio: {
+      baseStyle: {},
+      control: {
+        borderColor: "red",
+        background: "red",
+        _checked: {
+          borderColor: "red",
+          background: "red",
+        },
+      },
+    },
   },
 });

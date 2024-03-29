@@ -18,7 +18,7 @@ export const Place = ({
   return (
     <Section flexProps={flexProps}>
       <Heading>Место проведения</Heading>
-      <Grid gridTemplateRows="auto 1fr" w="100%" h="100%" gap={5}>
+      <Grid gridTemplateRows="auto 300px" w="100%" h="100%" gap={5}>
         <Flex flexDir="column" gap={3}>
           <Text fontWeight={700}>Эко-парк "Вереск"</Text>
           <Divider />
@@ -27,7 +27,7 @@ export const Place = ({
             поселение, Выборгский район, Ленинградская область
           </Text>
         </Flex>
-        <Flex w="100%" h="100%" borderRadius={6} overflow="hidden">
+        <Flex w="100%" h="100%" borderRadius={6} overflow="hidden" zIndex={1}>
           <YMaps>
             <Map
               width="100%"

@@ -10,6 +10,14 @@ import {
 import { MdCheckCircle } from "react-icons/md";
 import { Section } from "../components/Section";
 
+const TimingSections = [
+  {
+    time: "14:00 - трансфер",
+    description:
+      "Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание",
+  },
+];
+
 export const About = ({
   ...flexProps
 }: {
@@ -17,43 +25,43 @@ export const About = ({
 }) => {
   return (
     <Section flexProps={flexProps}>
-      <Grid gap={5} justifyItems="center">
-        <Heading>Дорогой гость!</Heading>
+      <Grid gap={2} justifyItems="center">
+        <Heading size="lg">Дорогой гость!</Heading>
         <Text textIndent="20px" textAlign="justify">
-          Мы рады сообщить Вам, что 10.08.2024 состоится самое главное торжество
-          в нашей жизни - день нашей свадьбы! Приглашаем Вас разделить с нами
-          радость этого незабываемого дня.
+          Мы рады сообщить Вам, что{" "}
+          <Text as="span" transform="scale(1.1)" fontWeight={700}>
+            10.08.2024
+          </Text>{" "}
+          состоится самое главное торжество в нашей жизни - день нашей свадьбы!
+          Приглашаем Вас разделить с нами радость этого незабываемого дня.
         </Text>
       </Grid>
 
-      <Grid gap={5} justifyItems="center">
+      <Grid gap={2} justifyItems="center">
         <Heading>Расписание дня:</Heading>
-        <List spacing={3} maxW="650px" gap={2} display="grid">
+        <List spacing={5} maxW="650px" display="grid">
           <ListItem display="flex">
             <ListIcon as={MdCheckCircle} color="green.500" />
-            <Grid gap={3}>
+            <Grid gap={1}>
               <Heading size="md">14:00 - трансфер</Heading>
               <Text>
-                Краткое описание Краткое описание Краткое описание Краткое
-                описание Краткое описание
+                Траспорт отправиться из 2 точек. Подробности можно узнать у
+                организаторов
               </Text>
             </Grid>
           </ListItem>
 
           <ListItem display="flex">
             <ListIcon as={MdCheckCircle} color="green.500" />
-            <Grid gap={3}>
+            <Grid gap={1}>
               <Heading size="md">15:00 - сбор гостей</Heading>
-              <Text>
-                Краткое описание Краткое описание Краткое описание Краткое
-                описание Краткое описание
-              </Text>
+              <Text>Время для встреч и знакомства</Text>
             </Grid>
           </ListItem>
 
           <ListItem display="flex">
             <ListIcon as={MdCheckCircle} color="green.500" />
-            <Grid gap={3}>
+            <Grid gap={1}>
               <Heading size="md">16:00 - церемония</Heading>
               <Text>
                 Краткое описание Краткое описание Краткое описание Краткое
@@ -64,7 +72,7 @@ export const About = ({
 
           <ListItem display="flex">
             <ListIcon as={MdCheckCircle} color="green.500" />
-            <Grid gap={3}>
+            <Grid gap={1}>
               <Heading size="md">18:00 - банкет</Heading>
               <Text>
                 Краткое описание Краткое описание Краткое описание Краткое
@@ -75,7 +83,7 @@ export const About = ({
 
           <ListItem display="flex">
             <ListIcon as={MdCheckCircle} color="green.500" />
-            <Grid gap={3}>
+            <Grid gap={1}>
               <Heading size="md">23:00 - трансфер</Heading>
               <Text>
                 Краткое описание Краткое описание Краткое описание Краткое

@@ -11,11 +11,35 @@ import {
   RadioGroup,
   Radio,
   Stack,
+  Checkbox,
 } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
 import { Section } from "../components/Section";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { FormControl } from "~/shared/ui/components/FormControl";
+
+const ALCO_OPTIONS = [
+  "Красное вино (сухое)",
+  "Красное вино (полусладкое)",
+  "Белое вино (сухое)",
+  "Белое вино (полусладкое)",
+  "Вино игристое",
+  "Мартини",
+  "Виски",
+  "Водка",
+  "Коньяк",
+  "Ром",
+  "Джин",
+];
+
+const TRANSFER_OPTIONS = [
+  "Нет",
+  "Да, туда и обратно",
+  "Да, только туда",
+  "Да, только обратно",
+];
+
+const FOOD_OPTIONS = ["Ем всё", "Не ем мясо", "Не ем рыбу", "Вегетарианец"];
 
 export const Form = ({
   ...flexProps
@@ -25,7 +49,11 @@ export const Form = ({
   const methods = useForm({
     defaultValues: {
       name: "",
-      gender: "",
+      visit: "Да",
+      transfer: "Нет",
+      alco: [],
+      food: [],
+      additional: "",
     },
   });
 
@@ -33,63 +61,26 @@ export const Form = ({
     console.log(data);
   };
   return (
-    <Section flexProps={{ ...flexProps, color: "black" }}>
+    <Section flexProps={{ ...flexProps }}>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Heading>Анкета гостя</Heading>
-          <FormControl label="Ваше имя">
-            <Input {...methods.register("name")} placeholder="Иванов Иван" />
+          <FormControl label="Ваше имя:">
+            <Input {...methods.register("name")} placeholder="Введите имя" />
           </FormControl>
 
-          <FormControl label="Потребуется ли Вам трансфер?">
+          <FormControl label="Сможете ли Вы присутствовать?">
             <Controller
-              name="transport"
+              name="visit"
               control={methods.control}
               render={({ field: { onChange, value } }) => (
                 <RadioGroup onChange={onChange} value={value}>
-                  <Stack direction="column">
-                    <Radio value="Нет">Нет</Radio>
-                    <Radio value="До">Только ДО торжества</Radio>
-                    <Radio value="После">Только ПОСЛЕ торжества</Radio>
-                    <Radio value="Оба">До и после торжества</Radio>
-                  </Stack>
-                </RadioGroup>
-              )}
-            />
-          </FormControl>
-
-          <FormControl label="Есть ли у вас особые предпочтения по еде?">
-            <Controller
-              name="food"
-              control={methods.control}
-              render={({ field: { onChange, value } }) => (
-                <RadioGroup onChange={onChange} value={value}>
-                  <Stack direction="column">
-                    <Radio value="Нет">Нет</Radio>
-                    <Radio value="Не ест мясо">Не ем мясо</Radio>
-                    <Radio value="Не ест рыбу">Не ем рыбу</Radio>
-                    <Radio value="Вегетарианец">Вегетарианец</Radio>
-                  </Stack>
-                </RadioGroup>
-              )}
-            />
-          </FormControl>
-
-          <FormControl label="Какой алкоголь предпочитаете?">
-            <Controller
-              name="radio"
-              control={methods.control}
-              render={({ field: { onChange, value } }) => (
-                <RadioGroup onChange={onChange} value={value}>
-                  <Stack direction="column">
-                    <Radio value="Нет">Нет</Radio>
-                    <Radio value="Красное вино">Красное вино</Radio>
-                    <Radio value="Белое вино">Белое вино</Radio>
-                    <Radio value="Шампанское">Шампанское</Radio>
-                    <Radio value="Виски/коньяк">Виски/коньяк</Radio>
-                    <Radio value="Водка">Водка</Radio>
-                    <Radio value="Не буду пить алкоголь">
-                      Не буду пить алкоголь
+                  <Stack direction="row" gap={6}>
+                    <Radio colorScheme="white" value="Да">
+                      Да
+                    </Radio>
+                    <Radio colorScheme="white" value="Нет">
+                      Нет
                     </Radio>
                   </Stack>
                 </RadioGroup>
@@ -97,22 +88,62 @@ export const Form = ({
             />
           </FormControl>
 
-          <FormControl label="Будет ли с вами ребенок?">
+          <FormControl label="Потребуется ли Вам трансфер?">
             <Controller
-              name="children"
+              name="transfer"
               control={methods.control}
               render={({ field: { onChange, value } }) => (
                 <RadioGroup onChange={onChange} value={value}>
                   <Stack direction="column">
-                    <Radio value="Да">Да</Radio>
-                    <Radio value="Нет">Нет</Radio>
+                    {TRANSFER_OPTIONS.map((option) => (
+                      <Radio colorScheme="white" value={option}>
+                        {option}
+                      </Radio>
+                    ))}
                   </Stack>
                 </RadioGroup>
               )}
             />
           </FormControl>
 
-          <Button type="submit">Отправить</Button>
+          <FormControl label="Ваши предпочтения по алкоголю?">
+            <Stack direction="column">
+              {ALCO_OPTIONS.map((type) => (
+                <Checkbox
+                  {...methods.register("alco")}
+                  colorScheme="white"
+                  value={type}
+                >
+                  {type}
+                </Checkbox>
+              ))}
+            </Stack>
+          </FormControl>
+
+          <FormControl label="Ваши предпочтения в еде?">
+            <Stack direction="column">
+              {FOOD_OPTIONS.map((type) => (
+                <Checkbox
+                  {...methods.register("food")}
+                  colorScheme="white"
+                  value={type}
+                >
+                  {type}
+                </Checkbox>
+              ))}
+            </Stack>
+          </FormControl>
+
+          <FormControl label="Что нам ещё следует знать?">
+            <Input
+              {...methods.register("additional")}
+              placeholder="Дополнительная информация"
+            />
+          </FormControl>
+
+          <Button w="100%" type="submit">
+            Отправить
+          </Button>
         </form>
       </FormProvider>
     </Section>

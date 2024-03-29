@@ -22,6 +22,7 @@ export const NavMenu: React.FC = () => {
         top={5}
         size="lg"
         bgColor="brand.white"
+        zIndex={1}
       />
       <MenuList>
         {SECTIONS_CONFIG.map((section) => (

@@ -3,19 +3,20 @@ export const Input = {
   variants: {
     outline: {
       field: {
-        bg: "brand.white",
+        _placeholder: {
+          color: "brand.green100",
+        },
         borderWidth: "1px",
         borderStyle: "solid",
-        borderColor: "brand.gray300",
+        boxShadow: "none",
+        borderColor: "brand.green100",
         _hover: {
-          borderColor: "brand.blue300",
+          borderColor: "var(--chakra-colors-brand-white)",
           boxShadow: "none",
         },
         _focus: {
-          boxShadow: "0px 0px 0px 3px var(--chakra-colors-brand-blueShadow)",
-        },
-        _focusVisible: {
-          boxShadow: "0px 0px 0px 3px var(--chakra-colors-brand-blue500)",
+          borderColor: "var(--chakra-colors-brand-white)",
+          boxShadow: "none",
         },
         _invalid: {
           boxShadow: "0px 0px 0px 3px var(--chakra-colors-brand-redShadow)",

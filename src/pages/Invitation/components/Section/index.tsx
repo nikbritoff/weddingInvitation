@@ -7,21 +7,27 @@ export const Section = ({
   flexProps?: FlexProps & { id: string };
   children?: React.ReactNode;
 }) => {
-  console.log(flexProps);
   return (
     <Flex
-      h="100vh"
+      // minH="100vh"
       w="100%"
-      id="green"
       p={5}
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      gap={12}
       color="brand.white"
       {...flexProps}
     >
-      {children}
+      <Flex
+        maxW="650px"
+        h="100%"
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+        gap={5}
+      >
+        {children}
+      </Flex>
     </Flex>
   );
 };
