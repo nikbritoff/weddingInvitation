@@ -64,7 +64,7 @@ export const Form = ({
 
           <Flex flexDirection="column" w="100%" gap={3}>
             <FormControl label="Ваше имя:" isPadding={false}>
-              <Input {...methods.register("name")} />
+              <Input {...methods.register("name")} colorScheme="white" />
             </FormControl>
 
             <FormControl
@@ -77,8 +77,12 @@ export const Form = ({
                 render={({ field: { onChange, value } }) => (
                   <RadioGroup onChange={onChange} value={value}>
                     <Stack direction="row" gap={3}>
-                      <Radio value="Да">Да</Radio>
-                      <Radio value="Нет">Нет</Radio>
+                      <Radio value="Да" colorScheme="white">
+                        Да
+                      </Radio>
+                      <Radio value="Нет" colorScheme="white">
+                        Нет
+                      </Radio>
                     </Stack>
                   </RadioGroup>
                 )}
@@ -93,7 +97,9 @@ export const Form = ({
                   <RadioGroup onChange={onChange} value={value}>
                     <Stack direction="column" gap={0}>
                       {TRANSFER_OPTIONS.map((option) => (
-                        <Radio value={option}>{option}</Radio>
+                        <Radio value={option} colorScheme="white">
+                          {option}
+                        </Radio>
                       ))}
                     </Stack>
                   </RadioGroup>
@@ -129,7 +135,10 @@ export const Form = ({
             </FormControl>
 
             <FormControl label="Что нам ещё следует знать?" isPadding={false}>
-              <Textarea {...methods.register("additional")} variant="primary" />
+              <Textarea
+                {...methods.register("additional")}
+                colorScheme="white"
+              />
             </FormControl>
 
             <Button w="100%" type="submit" mt={3}>

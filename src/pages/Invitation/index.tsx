@@ -5,7 +5,14 @@ import { SECTIONS_CONFIG } from "~/shared/layout/const.layout";
 
 export const Component = () => {
   return (
-    <Flex flexDir="column" w="100%" gap={20} pb={5}>
+    <Flex
+      flexDir="column"
+      w="100%"
+      gap={20}
+      pb={5}
+      bg="brand.green100"
+      color="brand.white"
+    >
       <Flex
         bgImg={WeddingPhoto}
         filter="grayscale(1)"
