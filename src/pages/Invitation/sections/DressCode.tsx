@@ -53,9 +53,8 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
           ))}
         </Grid>
         <Flex
-          bg="brand.white"
-          p={5}
-          pt={2}
+          bg="brand.gray200"
+          p={2}
           justifyContent="center"
           borderRadius={6}
           gap={3}

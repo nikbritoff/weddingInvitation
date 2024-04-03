@@ -27,7 +27,7 @@ export const Place = ({
             поселение, Выборгский район, Ленинградская область
           </Text>
         </Flex>
-        <Flex w="100%" h="100%" borderRadius={6} overflow="hidden" zIndex={1}>
+        <Flex w="100%" h="100%" borderRadius={6} overflow="hidden">
           <YMaps>
             <Map
               width="100%"

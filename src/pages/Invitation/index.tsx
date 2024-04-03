@@ -1,19 +1,46 @@
-import { Divider, Flex, Heading } from "@chakra-ui/react";
+import { Divider, Flex, Heading, Image } from "@chakra-ui/react";
 
 import WeddingPhoto from "~/assets/wedding.jpg";
 import { SECTIONS_CONFIG } from "~/shared/layout/const.layout";
 
 export const Component = () => {
   return (
-    <Flex
-      flexDir="column"
-      w="100%"
-      gap={20}
-      pb={5}
-      bg="brand.green100"
-      color="brand.white"
-    >
+    <Flex bg="brand.green100" justifyContent="center" w="100%">
       <Flex
+        maxWidth="450px"
+        flexDir="column"
+        // w="100%"
+        gap={20}
+        pb={20}
+        pt={20}
+        bg="brand.green100"
+        color="brand.white"
+      >
+        <Flex
+          flexDirection="column"
+          gap={3}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Heading size="xl" textAlign="center" color="brand.white">
+            Приглашение на свадьбу
+          </Heading>
+          <Heading size="xl" textAlign="center" color="brand.white">
+            Никита и Олеся
+          </Heading>
+          <Heading size="xl" textAlign="center" color="brand.white">
+            10 августа 2024
+          </Heading>
+        </Flex>
+
+        <Image
+          src={WeddingPhoto}
+          height="300px"
+          objectFit="cover"
+          filter="grayscale(1)"
+        ></Image>
+
+        {/* <Flex
         bgImg={WeddingPhoto}
         filter="grayscale(1)"
         bgRepeat="no-repeat"
@@ -38,13 +65,12 @@ export const Component = () => {
         <Heading size="xl" textAlign="center" color="brand.white">
           10 августа 2024
         </Heading>
-      </Flex>
+      </Flex> */}
 
-      {SECTIONS_CONFIG.map(({ Section, id }, index) => (
-        <>
+        {SECTIONS_CONFIG.map(({ Section, id }) => (
           <Section id={id} key={id} />
-        </>
-      ))}
+        ))}
+      </Flex>
     </Flex>
   );
 };

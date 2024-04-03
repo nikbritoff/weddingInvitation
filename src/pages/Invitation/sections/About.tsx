@@ -31,7 +31,7 @@ export const About = ({
       </Heading>
       <Text lineHeight={1.2}>
         Мы рады сообщить Вам, что{" "}
-        <Text as="span" fontWeight={700} color="brand.green100">
+        <Text as="span" fontWeight={700} color="brand.beige100">
           10.08.2024
         </Text>{" "}
         состоится самое главное торжество в нашей жизни - день нашей свадьбы!

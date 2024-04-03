@@ -64,7 +64,15 @@ export const Form = ({
 
           <Flex flexDirection="column" w="100%" gap={3}>
             <FormControl label="Ваше имя:" isPadding={false}>
-              <Input {...methods.register("name")} colorScheme="white" />
+              <Input
+                {...methods.register("name")}
+                colorScheme="white"
+                _hover={{
+                  borderColor: "brand.beige200",
+                  boxShadow:
+                    "0px 0px 0px 1px var(--chakra-colors-brand-beige100)",
+                }}
+              />
             </FormControl>
 
             <FormControl
@@ -127,7 +135,11 @@ export const Form = ({
             <FormControl label="Ваши предпочтения в еде?" isPadding={false}>
               <Stack direction="column" gap={0}>
                 {FOOD_OPTIONS.map((type) => (
-                  <Checkbox {...methods.register("food")} value={type}>
+                  <Checkbox
+                    {...methods.register("food")}
+                    value={type}
+                    colorScheme="white"
+                  >
                     {type}
                   </Checkbox>
                 ))}
@@ -137,6 +149,11 @@ export const Form = ({
             <FormControl label="Что нам ещё следует знать?" isPadding={false}>
               <Textarea
                 {...methods.register("additional")}
+                _hover={{
+                  borderColor: "brand.beige200",
+                  boxShadow:
+                    "0px 0px 0px 1px var(--chakra-colors-brand-beige100)",
+                }}
                 colorScheme="white"
               />
             </FormControl>

@@ -10,10 +10,9 @@ export const Button = {
   variants: {
     primary: {
       color: "brand.white",
-      // bg: "brand.blue500",
-      bg: "#c1ab9c",
+      bg: "brand.beige200",
       _hover: {
-        bg: "brand.blue800",
+        bg: "brand.beige500",
       },
       _disabled: {
         bg: "brand.gray300",
