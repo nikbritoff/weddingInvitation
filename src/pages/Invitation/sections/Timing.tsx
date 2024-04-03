@@ -3,12 +3,10 @@ import {
   Grid,
   Heading,
   List,
-  ListIcon,
   ListItem,
   Text,
 } from "@chakra-ui/react";
 import { Section } from "../components/Section";
-import { MdCheckCircle } from "react-icons/md";
 
 export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
   return (
@@ -19,8 +17,8 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
           <Grid gap={1}>
             <Heading size="md">14:00 - трансфер</Heading>
             <Text>
-              Траспорт отправиться из 2 точек. Подробности можно узнать у
-              организаторов
+              Для вашего удобства будет организован трансфер до места
+              празднования
             </Text>
           </Grid>
         </ListItem>
@@ -36,8 +34,8 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
           <Grid>
             <Heading size="md">16:00 - церемония</Heading>
             <Text>
-              Краткое описание Краткое описание Краткое описание Краткое
-              описание Краткое описание
+              Ключевой момент наших жизней, который мы хотим разделить вместе с
+              вами
             </Text>
           </Grid>
         </ListItem>
@@ -45,20 +43,14 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         <ListItem display="flex">
           <Grid>
             <Heading size="md">18:00 - банкет</Heading>
-            <Text>
-              Краткое описание Краткое описание Краткое описание Краткое
-              описание Краткое описание
-            </Text>
+            <Text>Праздничный ужин и развлекательная программа</Text>
           </Grid>
         </ListItem>
 
         <ListItem display="flex">
           <Grid>
             <Heading size="md">23:00 - трансфер</Heading>
-            <Text>
-              Краткое описание Краткое описание Краткое описание Краткое
-              описание Краткое описание
-            </Text>
+            <Text>Будет организован транспорт до города</Text>
           </Grid>
         </ListItem>
       </List>

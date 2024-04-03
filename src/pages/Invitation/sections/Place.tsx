@@ -5,16 +5,18 @@ import {
   FlexProps,
   Flex,
   Divider,
+  Link,
+  Button,
+  Stack,
 } from "@chakra-ui/react";
 import { Section } from "../components/Section";
-import { YMaps, Map } from "@pbe/react-yandex-maps";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 export const Place = ({
   ...flexProps
 }: {
   flexProps?: FlexProps & { id: string };
 }) => {
-  console.log({ flexProps });
   return (
     <Section flexProps={flexProps}>
       <Heading>Место проведения</Heading>
@@ -26,6 +28,19 @@ export const Place = ({
             Линтульская аллея, 39, посёлок Ильичёво, Первомайское сельское
             поселение, Выборгский район, Ленинградская область
           </Text>
+          <Divider />
+          <Stack direction="row">
+            <Button
+              as={Link}
+              href="https://yandex.ru/maps/-/CDROAIJ0"
+              target="blank"
+            >
+              Яндекс-карты
+            </Button>
+            <Button as={Link} href="https://go.2gis.com/1yyry6">
+              2gis
+            </Button>
+          </Stack>
         </Flex>
         <Flex w="100%" h="100%" borderRadius={6} overflow="hidden">
           <YMaps>
@@ -33,7 +48,9 @@ export const Place = ({
               width="100%"
               height="100%"
               defaultState={{ center: [60.250414, 29.784326], zoom: 12 }}
-            />
+            >
+              <Placemark geometry={[60.250414, 29.784326]} options={{}} />
+            </Map>
           </YMaps>
         </Flex>
       </Grid>

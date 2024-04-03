@@ -9,10 +9,13 @@ import {
   Checkbox,
   Flex,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { Section } from "../components/Section";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { FormControl } from "~/shared/ui/components/FormControl";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 const ALCO_OPTIONS = [
   "Красное вино (сухое)",
@@ -42,6 +45,9 @@ export const Form = ({
 }: {
   flexProps?: FlexProps & { id: string };
 }) => {
+  const toast = useToast();
+  const [isSending, setIsSending] = useState(false);
+
   const methods = useForm({
     defaultValues: {
       name: "",
@@ -54,16 +60,43 @@ export const Form = ({
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    if (isSending) {
+      return;
+    }
+    setIsSending(true);
+
+    emailjs
+      .send("service_iiyc8ob", "template_h5ky2v5", data, {
+        publicKey: "WR6E8DXdd6T-nncz9",
+      })
+      .then((resp) => {
+        toast({
+          status: "success",
+          title: "Сообщение отправлено",
+          duration: 5000,
+          isClosable: true,
+        });
+        methods.reset();
+        setIsSending(false);
+      })
+      .catch((resp) => {
+        setIsSending(false);
+        toast({
+          status: "error",
+          title: "Ошибка отправки. Попробуйте позже",
+          duration: 5000,
+          isClosable: true,
+        });
+      });
   };
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
+      <form onSubmit={methods.handleSubmit(onSubmit)} id="formId">
         <Section flexProps={{ ...flexProps, width: "100%", maxW: "100%" }}>
           <Heading>Анкета гостя</Heading>
 
           <Flex flexDirection="column" w="100%" gap={3}>
-            <FormControl label="Ваше имя:" isPadding={false}>
+            <FormControl label="Ваше имя:" isPadding={false} isRequired>
               <Input
                 {...methods.register("name")}
                 colorScheme="white"
@@ -78,6 +111,7 @@ export const Form = ({
             <FormControl
               label="Сможете ли Вы присутствовать?"
               isPadding={false}
+              isRequired
             >
               <Controller
                 name="visit"
@@ -158,7 +192,7 @@ export const Form = ({
               />
             </FormControl>
 
-            <Button w="100%" type="submit" mt={3}>
+            <Button w="100%" type="submit" mt={3} isLoading={isSending}>
               Отправить
             </Button>
           </Flex>

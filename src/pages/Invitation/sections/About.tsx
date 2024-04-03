@@ -1,23 +1,5 @@
-import {
-  Heading,
-  List,
-  ListItem,
-  ListIcon,
-  Grid,
-  Text,
-  FlexProps,
-  Flex,
-} from "@chakra-ui/react";
-import { MdCheckCircle } from "react-icons/md";
+import { Heading, Text, FlexProps } from "@chakra-ui/react";
 import { Section } from "../components/Section";
-
-const TimingSections = [
-  {
-    time: "14:00 - трансфер",
-    description:
-      "Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание",
-  },
-];
 
 export const About = ({
   ...flexProps
