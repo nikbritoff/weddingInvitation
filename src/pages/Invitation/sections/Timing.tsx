@@ -18,21 +18,21 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
             <Heading size="md">14:00 - трансфер</Heading>
             <Text>
               Для вашего удобства будет организован трансфер до места
-              празднования
+              проведения мероприятия
             </Text>
           </Grid>
         </ListItem>
 
         <ListItem display="flex">
           <Grid>
-            <Heading size="md">15:00 - сбор гостей</Heading>
+            <Heading size="md">16:00 - сбор гостей</Heading>
             <Text>Время для встреч и знакомства</Text>
           </Grid>
         </ListItem>
 
         <ListItem display="flex">
           <Grid>
-            <Heading size="md">16:00 - церемония</Heading>
+            <Heading size="md">17:00 - церемония</Heading>
             <Text>
               Ключевой момент наших жизней, который мы хотим разделить вместе с
               вами

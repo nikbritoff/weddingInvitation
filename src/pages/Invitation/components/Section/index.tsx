@@ -3,9 +3,11 @@ import { Flex, FlexProps } from "@chakra-ui/react";
 export const Section = ({
   flexProps,
   children,
+  withBorder,
 }: {
   flexProps?: FlexProps & { id: string };
   children?: React.ReactNode;
+  withBorder?: boolean;
 }) => {
   return (
     <Flex
@@ -25,6 +27,11 @@ export const Section = ({
         justifyContent="center"
         flexDirection="column"
         gap={6}
+        border={
+          withBorder ? "1px solid var(--chakra-colors-brand-white)" : undefined
+        }
+        borderRadius={withBorder ? 6 : undefined}
+        py={withBorder ? 4 : undefined}
       >
         {children}
       </Flex>

@@ -22,7 +22,9 @@ export const Place = ({
       <Heading>Место проведения</Heading>
       <Grid gridTemplateRows="auto 300px" w="100%" h="100%" gap={2}>
         <Flex flexDir="column" gap={2}>
-          <Heading fontWeight={700} size="md">Эко-парк "Вереск"</Heading>
+          <Heading fontWeight={700} size="md">
+            Эко-парк "Вереск"
+          </Heading>
           <Divider />
           <Text>
             Линтульская аллея, 39, посёлок Ильичёво, Первомайское сельское
@@ -42,11 +44,12 @@ export const Place = ({
             </Button>
           </Stack>
         </Flex>
-        <Flex w="100%" h="100%" borderRadius={6} overflow="hidden">
+        <Flex w="100%" h="300px" borderRadius={6} overflow="hidden">
           <YMaps>
             <Map
               width="100%"
               height="100%"
+              onLoad={() => console.log("map loaded")}
               defaultState={{ center: [60.250414, 29.784326], zoom: 12 }}
             >
               <Placemark geometry={[60.250414, 29.784326]} options={{}} />

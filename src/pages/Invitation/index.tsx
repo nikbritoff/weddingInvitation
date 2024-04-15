@@ -21,13 +21,34 @@ export const Component = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <Heading size="xl" fontSize={35} textAlign="center" color="brand.white" lineHeight={1.1}>
-            Приглашение<br />на свадьбу
+          <Heading
+            size="xl"
+            fontSize={35}
+            textAlign="center"
+            color="brand.white"
+            lineHeight={1.1}
+          >
+            Приглашение
+            <br />
+            на свадьбу
           </Heading>
-          <Heading size="xl" textAlign="center" color="brand.white" fontWeight={300} lineHeight={1.1} mt={3}>
+          <Heading
+            size="xl"
+            textAlign="center"
+            color="brand.white"
+            fontWeight={300}
+            lineHeight={1.1}
+            mt={3}
+          >
             Никита и Олеся
           </Heading>
-          <Heading size="xl" textAlign="center" color="brand.white" fontWeight={300} lineHeight={1.1}>
+          <Heading
+            size="xl"
+            textAlign="center"
+            color="brand.white"
+            fontWeight={300}
+            lineHeight={1.1}
+          >
             10 августа 2024
           </Heading>
         </Flex>

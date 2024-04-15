@@ -41,8 +41,9 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
           Дорогие гости! Для нашей свадьбы мы выбрали экостиль, где ценится
           природа и ее красота. Мы будем рады, если Вы поддержите нас, выбрав
           одежду в натуральных оттенках: зеленый, светло-коричневый, бежевый, и
-          в вашем образе будет присутствовать <Text as="b">хотя бы один элемент зеленого
-          цвета </Text>, указанного в палитре цвета.
+          в вашем образе будет присутствовать{" "}
+          <Text as="b">хотя бы один элемент зеленого цвета </Text>, указанного в
+          палитре цвета.
         </Text>
         <Text>
           Пожалуйста, помните, что Ваш образ поможет создать уютную и
@@ -59,7 +60,7 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
               objectFit="cover"
               borderRadius={6}
               onClick={() => setCurrentPhoto(image)}
-              cursor='pointer'
+              cursor="pointer"
             />
           ))}
         </Grid>
@@ -72,12 +73,13 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         >
           {COLORS.map((color) => (
             <Box
+              key={color}
               w="50px"
               h="50px"
               borderRadius="50%"
               bg={color}
               onClick={() => setCurrentColor(color)}
-              cursor='pointer'
+              cursor="pointer"
             />
           ))}
         </Flex>

@@ -107,7 +107,7 @@ export const Form = ({
                 }}
                 placeholder="Иванов Иван Иванович"
                 _placeholder={{
-                  color: 'brand.gray500'
+                  color: "brand.gray500",
                 }}
               />
             </FormControl>
@@ -143,7 +143,7 @@ export const Form = ({
                   <RadioGroup onChange={onChange} value={value}>
                     <Stack direction="column" gap={0}>
                       {TRANSFER_OPTIONS.map((option) => (
-                        <Radio value={option} colorScheme="white">
+                        <Radio key={option} value={option} colorScheme="white">
                           {option}
                         </Radio>
                       ))}
@@ -160,6 +160,7 @@ export const Form = ({
               <Stack direction="column" gap={0}>
                 {ALCO_OPTIONS.map((type) => (
                   <Checkbox
+                    key={type}
                     {...methods.register("alco")}
                     colorScheme="white"
                     value={type}
@@ -174,6 +175,7 @@ export const Form = ({
               <Stack direction="column" gap={0}>
                 {FOOD_OPTIONS.map((type) => (
                   <Checkbox
+                    key={type}
                     {...methods.register("food")}
                     value={type}
                     colorScheme="white"

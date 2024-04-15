@@ -1,4 +1,5 @@
 import { About } from "~/pages/Invitation/sections/About";
+import { Contacts } from "~/pages/Invitation/sections/Contacts";
 import { DressCode } from "~/pages/Invitation/sections/DressCode";
 import { Form } from "~/pages/Invitation/sections/Form";
 import { Place } from "~/pages/Invitation/sections/Place";
@@ -18,16 +19,22 @@ export const SECTIONS_CONFIG = [
     bgColor: "#c1ab9c",
   },
   {
-    label: "Дресс-код",
-    id: "dressCode",
-    Section: DressCode,
-    bgColor: "#6a6e59",
-  },
-  {
     label: "Место проведения",
     id: "place",
     Section: Place,
     bgColor: "#c1ab9c",
+  },
+  {
+    label: "Контакты",
+    id: "contacts",
+    Section: Contacts,
+    bgColor: "#c1ab9c",
+  },
+  {
+    label: "Дресс-код",
+    id: "dressCode",
+    Section: DressCode,
+    bgColor: "#6a6e59",
   },
   {
     label: "Анкета",
