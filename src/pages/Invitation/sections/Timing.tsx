@@ -11,8 +11,8 @@ import { Section } from "../components/Section";
 export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
   return (
     <Section flexProps={flexProps}>
-      <Heading textAlign="center">Расписание дня:</Heading>
-      <List spacing={2} maxW="650px" display="grid">
+      <Heading textAlign="center">Расписание дня</Heading>
+      <List spacing={3} maxW="650px" display="grid">
         <ListItem display="flex">
           <Grid gap={1}>
             <Heading size="md">14:00 - трансфер</Heading>

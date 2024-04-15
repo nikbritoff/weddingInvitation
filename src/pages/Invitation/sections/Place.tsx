@@ -22,7 +22,7 @@ export const Place = ({
       <Heading>Место проведения</Heading>
       <Grid gridTemplateRows="auto 300px" w="100%" h="100%" gap={2}>
         <Flex flexDir="column" gap={2}>
-          <Text fontWeight={700}>Эко-парк "Вереск"</Text>
+          <Heading fontWeight={700} size="md">Эко-парк "Вереск"</Heading>
           <Divider />
           <Text>
             Линтульская аллея, 39, посёлок Ильичёво, Первомайское сельское

@@ -17,17 +17,17 @@ export const Component = () => {
       >
         <Flex
           flexDirection="column"
-          gap={3}
+          gap={0}
           alignItems="center"
           justifyContent="center"
         >
-          <Heading size="xl" textAlign="center" color="brand.white">
-            Приглашение на свадьбу
+          <Heading size="xl" fontSize={35} textAlign="center" color="brand.white" lineHeight={1.1}>
+            Приглашение<br />на свадьбу
           </Heading>
-          <Heading size="xl" textAlign="center" color="brand.white">
+          <Heading size="xl" textAlign="center" color="brand.white" fontWeight={300} lineHeight={1.1} mt={3}>
             Никита и Олеся
           </Heading>
-          <Heading size="xl" textAlign="center" color="brand.white">
+          <Heading size="xl" textAlign="center" color="brand.white" fontWeight={300} lineHeight={1.1}>
             10 августа 2024
           </Heading>
         </Flex>

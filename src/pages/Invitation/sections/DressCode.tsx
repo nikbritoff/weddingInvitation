@@ -21,14 +21,7 @@ import woman02 from "~/assets/woman02.jpg";
 import woman03 from "~/assets/woman03.jpg";
 import { useState } from "react";
 
-const COLORS = [
-  "#6a6e59",
-  "#939681",
-  "#e8d5ca",
-  "#c1ab9c",
-  "#a47d60",
-  "#713b22",
-];
+const COLORS = ["#6a6e59", "#939681", "#e8d5ca", "#c1ab9c", "#a47d60"];
 const IMAGES = [man01, man02, man03, woman01, woman02, woman03];
 
 export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
@@ -47,7 +40,9 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
         <Text>
           Дорогие гости! Для нашей свадьбы мы выбрали экостиль, где ценится
           природа и ее красота. Мы будем рады, если Вы поддержите нас, выбрав
-          одежду одежду в натуральных оттенках: зеленый, коричневый, бежевый.
+          одежду в натуральных оттенках: зеленый, светло-коричневый, бежевый, и
+          в вашем образе будет присутствовать <Text as="b">хотя бы один элемент зеленого
+          цвета </Text>, указанного в палитре цвета.
         </Text>
         <Text>
           Пожалуйста, помните, что Ваш образ поможет создать уютную и
@@ -64,6 +59,7 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
               objectFit="cover"
               borderRadius={6}
               onClick={() => setCurrentPhoto(image)}
+              cursor='pointer'
             />
           ))}
         </Grid>
@@ -72,15 +68,16 @@ export const DressCode = ({ ...flexProps }: { flexProps?: FlexProps }) => {
           p={2}
           justifyContent="center"
           borderRadius={6}
-          gap={3}
+          gap={5}
         >
           {COLORS.map((color) => (
             <Box
-              w="40px"
-              h="40px"
+              w="50px"
+              h="50px"
               borderRadius="50%"
               bg={color}
               onClick={() => setCurrentColor(color)}
+              cursor='pointer'
             />
           ))}
         </Flex>

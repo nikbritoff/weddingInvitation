@@ -96,7 +96,7 @@ export const Form = ({
           <Heading>Анкета гостя</Heading>
 
           <Flex flexDirection="column" w="100%" gap={3}>
-            <FormControl label="Ваше имя:" isPadding={false} isRequired>
+            <FormControl label="Ваше ФИО:" isPadding={false} isRequired>
               <Input
                 {...methods.register("name")}
                 colorScheme="white"
@@ -104,6 +104,10 @@ export const Form = ({
                   borderColor: "brand.beige200",
                   boxShadow:
                     "0px 0px 0px 1px var(--chakra-colors-brand-beige100)",
+                }}
+                placeholder="Иванов Иван Иванович"
+                _placeholder={{
+                  color: 'brand.gray500'
                 }}
               />
             </FormControl>
