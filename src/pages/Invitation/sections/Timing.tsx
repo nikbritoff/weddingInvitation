@@ -17,8 +17,8 @@ export const Timing = ({ ...flexProps }: { flexProps?: FlexProps }) => {
           <Grid gap={1}>
             <Heading size="md">14:00 - трансфер</Heading>
             <Text>
-              Для вашего удобства будет организован трансфер до места
-              проведения мероприятия
+              Для вашего удобства будет организован трансфер до места проведения
+              мероприятия
             </Text>
           </Grid>
         </ListItem>
