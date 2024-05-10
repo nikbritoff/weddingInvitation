@@ -9,6 +9,7 @@ export const Section = ({
   children?: React.ReactNode;
   withBorder?: boolean;
 }) => {
+  console.log('flexProps', flexProps)
   return (
     <Flex
       w="100%"
@@ -16,11 +17,9 @@ export const Section = ({
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      // color="brand.white"
       {...flexProps}
     >
       <Flex
-        // maxW="650px"
         w="100%"
         h="100%"
         alignItems="center"
